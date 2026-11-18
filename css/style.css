@@ -1,0 +1,15 @@
+html { scroll-behavior: smooth; }
+  /* Карточки: приподнимаются и чуть увеличиваются */
+  .card { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
+  .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 24px 48px -16px rgba(142,31,74,.28); }
+  .card img { transition: transform .6s ease; }
+  .card:hover img { transform: scale(1.08); }
+  .arch { border-radius: 999px 999px 24px 24px; }
+  @keyframes rise { from { opacity:0; transform: translateY(24px); } }
+  .rise { animation: rise .6s cubic-bezier(.2,.8,.2,1) backwards; animation-delay: calc(var(--i, 0) * 70ms); }
+  @keyframes pop { 50% { transform: scale(1.4); } }
+  .pop { animation: pop .3s ease; }
+  .chip.active { background:#8E1F4A; color:#fff; border-color:#8E1F4A; }
+  #drawer { transition: transform .35s ease; }
+  :focus-visible { outline: 3px solid #E8A3B5; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
